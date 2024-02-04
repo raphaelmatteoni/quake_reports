@@ -11,16 +11,31 @@ module Log
     def call
       @file.each do |row|
         @row = row
-        if row.include?("InitGame")
-          Match.create(name: game_name)
+        case
+        when row.include?("InitGame")
+          create_match
+        when row.include?("ClientUserinfoChanged")
+          create_player
         end
       end
     end
 
     private
 
+    def create_match
+      Match.create(name: game_name)
+    end
+
+    def create_player
+      Player.find_or_create_by(name: player_name)
+    end
+
     def game_name
       @row.match(/gamename\\([^\\]+)/)&.captures&.first
+    end
+
+    def player_name
+      @row.match(/n\\(.*?)\\t/)&.captures&.first
     end
   end
 end
