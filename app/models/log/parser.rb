@@ -27,7 +27,10 @@ module Log
     end
 
     def create_player
-      Player.find_or_create_by(name: Extractor.player_name(@row))
+      player_name = Extractor.player_name(@row)
+      player = Player.find_or_create_by(name: player_name)
+
+      @match.players << player if @match
     end
 
     def create_kill
