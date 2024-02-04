@@ -2,6 +2,9 @@ class Kill < ApplicationRecord
   belongs_to :killer, class_name: 'Player', foreign_key: 'killer_id', optional: true
   belongs_to :victim, class_name: 'Player', foreign_key: 'victim_id'
   belongs_to :match
+  
+  scope :by_world, -> { where(killer: nil) }
+
   enum cause_of_death: {
     MOD_UNKNOWN: "MOD_UNKNOWN",
     MOD_SHOTGUN: "MOD_SHOTGUN",

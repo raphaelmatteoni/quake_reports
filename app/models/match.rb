@@ -1,4 +1,7 @@
 class Match < ApplicationRecord
-  has_many :kills
+  include KillCountable
+
+  has_many :kills, dependent: :destroy
   has_many :players
+
 end

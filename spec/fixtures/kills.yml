@@ -1,0 +1,16 @@
+kill1:
+  match: match1
+  killer: player1
+  victim: player2
+  cause_of_death: "MOD_ROCKET"
+
+kill2:
+  match: match1
+  killer: player1
+  victim: player2
+  cause_of_death: "MOD_PLASMA"  
+
+kill3:
+  match: match1
+  victim: player1
+  cause_of_death: "MOD_GAUNTLET"
