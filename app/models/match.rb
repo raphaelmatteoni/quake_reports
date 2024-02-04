@@ -5,7 +5,7 @@ class Match < ApplicationRecord
   has_many :match_players
   has_many :players, through: :match_players
 
-  def death_cause
+  def kills_by_means
     { kills_by_means: kills.group(:cause_of_death).count }
   end
 end
