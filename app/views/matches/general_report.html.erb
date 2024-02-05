@@ -1,21 +1,22 @@
 <div class="margin-30">
   <h1>Match Score</h1>
   <div class="centered">
+    <h2>Top Players</h2>
     <div class="podium">
       <div class="trophy trophy-gold">
         <i class="fa-solid fa-trophy gold"></i>
-        <span class="font-size-22 bold"><%= @gold_player.name %></span>
-        <span>Total Kills: <%= @gold_player.total_kills %></span>
+        <span class="font-size-20 bold"><%= @top_killers.first.name %></span>
+        <span>Total Score: <%= @top_killers.first.total_kills %></span>
       </div>
       <div class="trophy trophy-silver">
         <i class="fa-solid fa-trophy silver"></i>
-        <span class="font-size-22 bold"><%= @silver_player.name %></span>
-        <span>Total Kills: <%= @silver_player.total_kills %></span>
+        <span class="font-size-20 bold"><%= @top_killers.second.name %></span>
+        <span>Total Score: <%= @top_killers.second.total_kills %></span>
       </div>
       <div class="trophy trophy-bronze">
         <i class="fa-solid fa-trophy bronze"></i>
-        <span class="font-size-22 bold"><%= @bronze_player.name %></span>
-        <span>Total Kills: <%= @bronze_player.total_kills %></span>
+        <span class="font-size-20 bold"><%= @top_killers.third.name %></span>
+        <span>Total Score: <%= @top_killers.third.total_kills %></span>
       </div>
     </div> 
   </div>
@@ -24,7 +25,7 @@
       <th>Match</th>
       <th>Total Kills</th>
       <th>Players</th>
-      <th>Kills</th>
+      <th>Players Score</th>
     </tr>
     <% @matches.each do |match| %>
       <tr>

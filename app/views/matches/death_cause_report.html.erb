@@ -1,5 +1,25 @@
 <div class="margin-30">
   <h1>Death Cause</h1>
+  <div class="centered">
+    <h2>Top Causes</h2>
+    <div class="podium">
+      <div class="trophy trophy-gold">
+        <i class="fa-solid fa-skull-crossbones gold"></i>
+        <span class="font-size-20 bold"><%= t("cause_of_death.#{@top_causes.first.cause_of_death}") %></span>
+        <span>Total Kills: <%= @top_causes.first.count %></span>
+      </div>
+      <div class="trophy trophy-silver">
+        <i class="fa-solid fa-skull-crossbones silver"></i>
+        <span class="font-size-20 bold"><%= t("cause_of_death.#{@top_causes.second.cause_of_death}") %></span>
+        <span>Total Kills: <%= @top_causes.second.count %></span>
+      </div>
+      <div class="trophy trophy-bronze">
+        <i class="fa-solid fa-skull-crossbones bronze"></i>
+        <span class="font-size-20 bold"><%= t("cause_of_death.#{@top_causes.third.cause_of_death}") %></span>
+        <span>Total Kills: <%= @top_causes.third.count %></span>
+      </div>
+    </div> 
+  </div>
   <table class="custom-table">
     <tr>
       <th>Match</th>
