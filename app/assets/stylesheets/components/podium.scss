@@ -1,0 +1,40 @@
+.podium {
+  width: 50%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.podium .trophy {
+  text-align: center;
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trophy i, .trophy span {
+  margin: 5px;
+}
+
+.trophy-gold {
+  order: 2;
+}
+
+.trophy-silver {
+  order: 1;
+}
+
+.trophy-bronze {
+  order: 3;
+}
+
+.podium .trophy i {
+  font-size: 3em;
+}
+
+.trophy i {
+  font-size: 3em;
+}
