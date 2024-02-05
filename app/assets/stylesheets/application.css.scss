@@ -135,16 +135,17 @@ a:hover, .text-red {
 }
 
 .podium {
-  width: 100%;
+  width: 50%;
   margin-top: 15px;
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
 }
 
 .podium .trophy {
   text-align: center;
   padding: 15px;
-  flex: 1; /* Distribui o espaço igualmente entre os troféus */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
