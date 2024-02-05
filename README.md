@@ -24,7 +24,7 @@ This route provides a detailed report for each match, including total kills, pla
 
 ### Example JSON Response
 
-´´´json
+```json
 [
   {
     "match_name": {
@@ -39,7 +39,7 @@ This route provides a detailed report for each match, including total kills, pla
   },
   // More matches...
 ]
-´´´
+```
 
 ### 2. Death Cause Report
 - Route: /matches/death_cause_report or /matches/death_cause_report.json
@@ -47,7 +47,7 @@ This route presents a report on deaths grouped by the cause of death for each ma
 
 ### Example JSON Response
 
-´´´json
+```json
 [
   {
     "match_name": {
@@ -65,31 +65,31 @@ This route presents a report on deaths grouped by the cause of death for each ma
   },
   // More matches...
 ]
-´´´
+```
 
 ### Project Setup
 
 1. Clone the repository:
 
-´´´sh
+```sh
 git clone https://github.com/raphaelmatteoni/quake_reports.git
 cd quake_reports
-´´´
+```
 
 2. Start the Docker containers:
 
-´´´sh
+```sh
 docker-compose up --build
-´´´
+```
 
 3. Access the application at http://localhost:3000.
 
 ## Running Tests
 RSpec is used for testing. Run the tests with:
 
-´´´sh
+```sh
 docker-compose run web bundle exec rspec
-´´´
+```
 
 ## Ruby and Rails Versions
 - Ruby 3.2.2
