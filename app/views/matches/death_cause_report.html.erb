@@ -1,0 +1,15 @@
+<div class="margin-30">
+  <h1>Death Cause</h1>
+  <table class="custom-table">
+    <tr>
+      <th>Match</th>
+      <th>Death Cause</th>
+    </tr>
+      <% @matches.each do |match| %>
+        <tr>
+          <td><%= match.name %></td>
+          <td><%= match.kills.group(:cause_of_death).count.map { |k,v| "#{k}: #{v}"}.join(' | ') %></td>
+        </tr>
+      <% end %>      
+    </tr>
+</div>

@@ -5,8 +5,8 @@
     <% end %>
   </div>
   <div class="menus">
-    <div class="menu">
-      <%= link_to 'Match Score', matches_general_report_path %>
-    </div>
+    <%= nav_link('Match Score', matches_general_report_path) %>
+    <span class="text-red">|</span>
+    <%= nav_link('Death Cause', matches_death_cause_report_path) %>
   </div>
 </div>
