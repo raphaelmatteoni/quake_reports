@@ -1,5 +1,24 @@
 <div class="margin-30">
   <h1>Match Score</h1>
+  <div class="centered">
+    <div class="podium">
+      <div class="trophy trophy-gold">
+        <i class="fa-solid fa-trophy gold"></i>
+        <span class="font-size-22 bold"><%= @gold_player.name %></span>
+        <span>Total Kills: <%= @gold_player.total_kills %></span>
+      </div>
+      <div class="trophy trophy-silver">
+        <i class="fa-solid fa-trophy silver"></i>
+        <span class="font-size-22 bold"><%= @silver_player.name %></span>
+        <span>Total Kills: <%= @silver_player.total_kills %></span>
+      </div>
+      <div class="trophy trophy-bronze">
+        <i class="fa-solid fa-trophy bronze"></i>
+        <span class="font-size-22 bold"><%= @bronze_player.name %></span>
+        <span>Total Kills: <%= @bronze_player.total_kills %></span>
+      </div>
+    </div> 
+  </div>
   <table class="custom-table">
     <tr>
       <th>Match</th>
