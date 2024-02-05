@@ -7,22 +7,23 @@ This project is a Rails application for Quake match reports.
 The Quake Reports project is designed to parse Quake game logs and generate comprehensive reports. It leverages a database structure to represent key data collected from the log files.
 
 ## Database Entities
-- Match: Represents a game match.
-- Player: Represents a player in the game.
-- MatchPlayer: Represents relation between match and player.
-- Kill: Represents a kill made by a player and the cause of death.
+- **Match**: Represents a game match.
+- **Player**: Represents a player in the game.
+- **MatchPlayer**: Represents relation between match and player.
+- **Kill**: Represents a kill made by a player and the cause of death.
 
 ## Initial Data
-The initial game log is available in the db/seeds/qgames.log file. It is loaded during the setup process.
+The initial game log is available in the **db/seeds/qgames.log** file. It is loaded during the setup process.
 
 ## Reports
 The project provides two types of reports, which can be accessed in both HTML and JSON formats.
 
-### 1. General Game Report
-- Route: /matches/general_report or /matches/general_report.json
+#### 1. General Game Report
+- Route: **/matches/general_report** or **/matches/general_report.json**
+
 This route provides a detailed report for each match, including total kills, player details, and kill counts.
 
-### Example JSON Response
+##### Example JSON Response
 
 ```json
 [
@@ -41,11 +42,12 @@ This route provides a detailed report for each match, including total kills, pla
 ]
 ```
 
-### 2. Death Cause Report
-- Route: /matches/death_cause_report or /matches/death_cause_report.json
+#### 2. Death Cause Report
+- Route: **/matches/death_cause_report** or **/matches/death_cause_report.json**
+
 This route presents a report on deaths grouped by the cause of death for each match.
 
-### Example JSON Response
+##### Example JSON Response
 
 ```json
 [
