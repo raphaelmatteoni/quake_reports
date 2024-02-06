@@ -4,7 +4,7 @@ class MatchesController < ApplicationController
   before_action :setup_top_killers, only: %i[general_report]
   before_action :setup_top_causes, only: %i[death_cause_report]
 
-  def index ; end
+  def index; end
 
   def general_report
     @matches = Match.includes(:kills, :match_players, match_players: [:player]).all
@@ -27,7 +27,7 @@ class MatchesController < ApplicationController
   private
 
   def setup_top_causes
-    @top_causes = Kill.select("cause_of_death, COUNT(*) AS count")
+    @top_causes = Kill.select('cause_of_death, COUNT(*) AS count')
                       .group(:cause_of_death)
                       .order('count DESC')
                       .limit(3)

@@ -12,10 +12,12 @@ module Log
     def call
       @file.each do |row|
         @row = row
-        case
-        when row.include?("InitGame") then create_match
-        when row.include?("ClientUserinfoChanged") then create_player
-        when row.include?("Kill") then create_kill
+        if row.include?('InitGame')
+          create_match
+        elsif row.include?('ClientUserinfoChanged')
+          create_player
+        elsif row.include?('Kill')
+          create_kill
         end
       end
     end
@@ -35,14 +37,14 @@ module Log
 
     def create_kill
       killer_name, victim_name, cause_of_death = Extractor.kill_info(@row)
-      killer = killer_name != "<world>" ? Player.find_by(name: killer_name) : nil
+      killer = killer_name != '<world>' ? Player.find_by(name: killer_name) : nil
       victim = Player.find_by(name: victim_name)
 
       Kill.create(
         match: @match,
-        killer: killer,
-        victim: victim,
-        cause_of_death: cause_of_death
+        killer:,
+        victim:,
+        cause_of_death:
       )
     end
   end

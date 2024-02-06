@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 json.array! @matches do |match|
   json.set! match.name.to_sym do
     json.total_kills match.total_kills

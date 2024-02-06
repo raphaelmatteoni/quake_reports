@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Player < ApplicationRecord
   include KillCountable
 
@@ -7,8 +9,8 @@ class Player < ApplicationRecord
   has_many :matches, through: :match_players
 
   def total_kills_in_match(match)
-    total_kills = kills.where(match: match).count
-    total_kills -= deaths.by_world.where(match: match).count
+    total_kills = kills.where(match:).count
+    total_kills -= deaths.by_world.where(match:).count
     total_kills
   end
 end
